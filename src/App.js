@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Stories from './components/stories-section/Stories';
+import MessagesSection from './components/messages-section/MessagesSection';
+import Footer from './components/footer/Footer';
+import React from 'react';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
+  const [darkTheme, setDarkTheme] = React.useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='w-25 m-auto row g-0'>
+        <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+        <Stories darkTheme={darkTheme}/>
+        <MessagesSection darkTheme={darkTheme}/>
+        <Footer darkTheme={darkTheme} />
+      </div>
     </div>
   );
 }
