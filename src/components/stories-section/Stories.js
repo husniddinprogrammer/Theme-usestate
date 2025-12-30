@@ -26,11 +26,11 @@ const stories = [
 ];
 function Stories({ darkTheme }) {
     return (
-        <div className={`${darkTheme ? "bg-success" : "bg-dark"} m-0 d-flex flex-row overflow-auto p-2`}>
+        <div className={`${darkTheme === "light" ? "bg-success" : "bg-dark"} m-0 d-flex flex-row overflow-auto p-2`}>
             {
                     stories.map(story => {
                         return (
-                            <div key={story.id} className={`${darkTheme ? "bg-success" : "bg-dark"} text-center w-25 m-1`}>
+                            <div key={story.id} className={`${darkTheme === "light" ? "bg-success" : "bg-dark"} text-center w-25 m-1`}>
                                 <img
                                     src={story.avatar}
                                     alt="Profil"

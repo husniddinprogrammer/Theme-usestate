@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import './Navbar.css';
 
-function Navbar({ darkTheme, setDarkTheme }) {
-  const toggleTheme = () => {
-    setDarkTheme(!darkTheme);
-  };
+function Navbar({ darkTheme, dispatch }) {
+  
   return (
-     <div className={darkTheme ? "bg-success" : "bg-dark"}>
+     <div className={darkTheme === "light" ? "bg-success" : "bg-dark"}>
       <div className="navbar p-2 d-flex justify-content-between">
         
         <a className="navbar-brand text-light">WhatsApp</a>
@@ -15,9 +13,9 @@ function Navbar({ darkTheme, setDarkTheme }) {
          
           <a
             style={{ cursor: "pointer" }}
-            onClick={toggleTheme}
+            onClick={() => dispatch({ type: darkTheme })}
           >
-            {darkTheme ? (
+            {darkTheme === "light" ? (
               <i className="fas fa-moon"></i>
             ) : (
               <i className="fas fa-sun"></i>

@@ -52,7 +52,7 @@ function MessagesSection ({darkTheme}) {
             <div>
                 {
                     messages.map(msg => {
-                        return (<div key={msg.id} className={`${darkTheme ? "bg-white" : "bg-dark"} d-flex align-items-center p-2 border-bottom`}>
+                        return (<div key={msg.id} className={`${darkTheme === "light" ? "bg-white" : "bg-dark"} d-flex align-items-center p-2 border-bottom`}>
                             <img
                                 src={msg.avatar}    
                                 alt="avatar"
@@ -63,14 +63,14 @@ function MessagesSection ({darkTheme}) {
 
                             <div className="flex-grow-1">
                                 <div className="d-flex justify-content-between">
-                                    <h6 className={`${darkTheme ? "text-muted" : "text-light"} mb-0 fw-semibold`}>{msg.name}</h6>
-                                    <small className={`${darkTheme ? "text-muted" : "text-light"}`}>{msg.time}</small>
+                                    <h6 className={`${darkTheme === "light" ? "text-muted" : "text-light"} mb-0 fw-semibold`}>{msg.name}</h6>
+                                    <small className={`${darkTheme === "light" ? "text-muted" : "text-light"}`}>{msg.time}</small>
                                 </div>
                                 <div className="d-flex align-items-center">
                                     <small className="text-success me-1">
                                         <i className='fas fa-check-double'></i>
                                     </small>
-                                    <small className={`${darkTheme ? "text-muted" : "text-light"} text-truncate`}>
+                                    <small className={`${darkTheme === "light" ? "text-muted" : "text-light"} text-truncate`}>
                                         {msg.message}
                                     </small>
                                 </div>
